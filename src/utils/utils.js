@@ -2,7 +2,7 @@ export const countOccurance = (arr, limit) => {
   const occurance = arr.reduce((sum, id) => 
     ({
       ...sum,
-      [id]: sum[id] ? sum[id] + 1 : 1
+      [id]: (sum[id] || 0) + 1
     }), {})
 
   return Object.keys(occurance).filter(x => occurance[x] >= limit);

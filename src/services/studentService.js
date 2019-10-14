@@ -39,17 +39,15 @@ const retrieveCommonStudentsIdsByTeachersIds = (ids) =>
   )
 
 const suspendStudentByEmail = email => 
-  Students.findOne({
-    where: {
-      email
-    }
-  }).then(student => {
-    student.update({
+    Students.update({
       suspended: 1
+    }, {
+      where: {
+        email
+      }
     }).then(student => {
       console.log(`student ${student.dataValues.id} suspended.`);
     })
-  })
 
 export const findCommonStudents = async (teacherEmails) => {
   const teacherIds = await retrieveTeacherIdsByEmails(teacherEmails);

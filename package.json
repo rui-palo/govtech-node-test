@@ -21,6 +21,7 @@
     "@babel/register": "^7.6.2",
     "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
+    "sequelize-cli": "^5.5.1",
     "sequelize-mock": "^0.10.2"
   }
 }
