@@ -4,7 +4,7 @@
   "description": "govtech node test",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest --forceExit --coverage --detectOpenHandles"
   },
   "author": "rui",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "@babel/core": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
     "@babel/register": "^7.6.2",
+    "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
     "sequelize-mock": "^0.10.2"
   }

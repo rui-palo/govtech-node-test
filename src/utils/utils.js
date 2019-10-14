@@ -25,4 +25,4 @@ export const getAdditionalEmailsFromMessage = (message) => {
 }
 
 export const turnIntoArray = (toBeArrafied) => 
-  typeof toBeArrafied === Array ? toBeArrafied : [toBeArrafied]
+  Array.isArray(toBeArrafied) ? toBeArrafied : [toBeArrafied]
