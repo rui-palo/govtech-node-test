@@ -19,7 +19,7 @@ const StudentsModel = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: 0,
-        field: 'is_suspended'
+        field: 'suspended'
       },
       createdAt: {
         type: DataTypes.DATE,

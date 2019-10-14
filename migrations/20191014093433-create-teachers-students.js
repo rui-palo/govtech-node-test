@@ -1,3 +1,4 @@
+'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('teachers_students', {
@@ -5,23 +6,23 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(11)
-      },
-      student_id: {
-        allowNull: false,
-        type: Sequelize.INTEGER(11)
+        type: Sequelize.INTEGER
       },
       teacher_id: {
         allowNull: false,
-        type: Sequelize.INTEGER(11)
+        type: Sequelize.INTEGER
+      },
+      student_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER
       },
       createdAt: {
-        type: Sequelize.DATE,
-        allowNull: false
+        allowNull: false,
+        type: Sequelize.DATE
       },
       updatedAt: {
-        type: Sequelize.DATE,
-        allowNull: true
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
   },
