@@ -1,4 +1,4 @@
-import * as notificationsService from '../services/notificationsService';
+import notificationsService from '../services/notificationsService';
 import { errorEnum } from '../constants/error';
 
 const retrieveForNotifications = async (req, res) => {

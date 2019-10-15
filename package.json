@@ -4,7 +4,11 @@
   "description": "govtech node test",
   "main": "index.js",
   "scripts": {
-    "test": "jest --forceExit --coverage --detectOpenHandles"
+    "test": "jest --forceExit --coverage --detectOpenHandles",
+    "start": "nodemon index.js",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "lint:fix": "./node_modules/.bin/eslint ./src --fix",
+    "db:init": "npx sequelize-cli db:create && npx sequelize-cli db:migrate"
   },
   "author": "rui",
   "license": "ISC",

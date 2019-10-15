@@ -28,12 +28,12 @@ export const registerStudent = (email, transaction) => Students.findOrCreate({
 export const registerTeacherToStudent = (teacherId, studentId, transaction) =>
   TeachersToStudents.findOrCreate({
     where: {
-      student_id: teacherId,
-      teacher_id: studentId,
+      student_id: studentId,
+      teacher_id: teacherId,
     },
     defaults: { // set the default properties if it doesn't exist
-      student_id: teacherId,
-      teacher_id: studentId,
+      student_id: studentId,
+      teacher_id: teacherId,
     },
     transaction,
     /* eslint-disable no-console */
@@ -42,8 +42,9 @@ export const registerTeacherToStudent = (teacherId, studentId, transaction) =>
 
 export const registerTeachersToStudents = async (teacherEmail, studentEmails) =>
   await sequelize.transaction(async (transaction) =>
-    Sequelize.Promise.each(studentEmails, async (studentEmail) => registerTeacherToStudent(
-      await registerTeacher(teacherEmail, transaction), // teacher id
-      await registerStudent(studentEmail, transaction), // student id
-      transaction, // transaction
-    )));
+    await Sequelize.Promise.each(studentEmails, async (studentEmail) =>
+      registerTeacherToStudent(
+        await registerTeacher(teacherEmail, transaction), // teacher id
+        await registerStudent(studentEmail, transaction), // student id
+        transaction, // transaction
+      )));
