@@ -1,18 +1,18 @@
-import Sequelize from "sequelize";
+import Sequelize from 'sequelize';
 
-const sequelize = new Sequelize('govtech_students', 'root', 'rootroot', {
+const sequelize = new Sequelize('govtech2', 'root', 'rootroot', {
   host: '127.0.0.1',
   dialect: 'mysql',
   operatorsAliases: false,
   dialectOptions: {
     dateStrings: true,
-    typeCast: function (field, next) { // for reading from database
+    typeCast(field, next) { // for reading from database
       if (field.type === 'DATETIME') {
-        return field.string()
+        return field.string();
       }
-      return next()
-    }
-  }
+      return next();
+    },
+  },
 });
 
-export default sequelize
+export default sequelize;
