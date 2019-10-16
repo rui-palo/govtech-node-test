@@ -1,8 +1,11 @@
-# Project Title
-
-Teacher student management
+# Teacher student management
 
 Built on Node with Sequelize ORM
+
+Available publicly on
+```
+52.221.235.126:3000
+```
 
 ## Getting Started
 
