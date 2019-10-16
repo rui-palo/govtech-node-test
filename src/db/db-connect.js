@@ -3,7 +3,6 @@ import Sequelize from 'sequelize';
 const sequelize = new Sequelize('govtech3', 'root', 'rootroot', {
   host: '127.0.0.1',
   dialect: 'mysql',
-  operatorsAliases: false,
   dialectOptions: {
     dateStrings: true,
     typeCast(field, next) { // for reading from database
